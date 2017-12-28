@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+	<title>HTML5 Bar Graph Example</title>
+</head>
+
+<body onload=" window.setTimeout(function(){displayMessage(3000);},3000);">
+<h2 align="center" id="scrollme">The yearly usage of water is depicted in bar graph as follows:-</h2>
+
+ <script language="JavaScript">
+        var msgIX = 0
+        var msgs = new Array(
+               "2000",
+                "2001",
+                "2002",
+		"2003",
+		"2004",
+		"2005",
+		"2006",
+		"2007",
+		"2008",
+		"2009",
+		"2010",
+		"222"
+        )
+
+        function displayMessage(milliseconds) {
+            if(msgIX < msgs.length){
+            if(document.getElementById != null) {
+                var heading = document.getElementById("scrollme")
+                heading.firstChild.nodeValue = msgs[msgIX]
+            }else{
+                if(navigator.appName == "Microsoft Internet Explorer") {
+                    var heading = document.all.item("scrollme")
+                    heading.innerText = msgs[msgIX]
+                }
+            }
+            ++msgIX;
+	if(msgIX+1>=msgs.length)
+		{
+		msgIX=0;
+		}
+            window.setTimeout(function(){displayMessage(milliseconds);},milliseconds);
+	
+        }
+        }
+    </script>
+
+	<div id="graphDiv1"></div>
+	<br />
+	<div id="graphDiv2"></div>
+	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
+    
+    <script src="{{=URL('static','js/html5-canvas-bar-graph.js')}}"></script>
+	<script>(function () {
+	
+		function createCanvas(divName) {
+			
+			var div = document.getElementById(divName);
+			var canvas = document.createElement('canvas');
+			div.appendChild(canvas);
+			if (typeof G_vmlCanvasManager != 'undefined') {
+				canvas = G_vmlCanvasManager.initElement(canvas);
+			}	
+			var ctx = canvas.getContext("2d");
+			return ctx;
+		}
+		
+		
+		var ctx2 = createCanvas("graphDiv2");
+		
+		var graph2 = new BarGraph(ctx2);
+		graph2.margin = 2;
+		graph2.width = 450;
+		graph2.height = 150;
+		graph2.xAxisLabelArr = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+		setInterval(function () {
+			graph2.update([Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20]);
+		}, 3000);
+
+	}());</script>
+</body>
+</html>

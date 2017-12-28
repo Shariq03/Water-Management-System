@@ -1,0 +1,4 @@
+{{extend 'layout.html'}}
+<style>
+    <font="purisa"><h1>Registration Page</style>h1></style></style>
+{{=form}}

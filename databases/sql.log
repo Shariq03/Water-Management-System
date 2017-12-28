@@ -1,0 +1,266 @@
+timestamp: 2016-09-17T16:52:31.935748
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2016-09-17T16:52:32.361333
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-09-17T16:52:32.518054
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-09-17T16:52:32.675113
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2016-09-17T16:52:32.831822
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-09-17T16:52:32.988529
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2016-09-17T17:25:07.995399
+CREATE TABLE water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    litres CHAR(512)
+);
+success!
+timestamp: 2016-10-03T09:08:41.508521
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:09:06.579140
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:09:51.405495
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:10:07.280205
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:11:06.492301
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:11:34.916017
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:11:40.352526
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:11:47.307901
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:12:20.640765
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:12:49.432779
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:13:12.036676
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:13:50.289862
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:14:50.269406
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:15:26.029612
+CREATE TABLE Project(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    litres CHAR(512)
+);
+success!
+timestamp: 2016-10-03T09:15:26.534521
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:15:49.345588
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:16:49.338125
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:17:49.335086
+CREATE TABLE Water(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+timestamp: 2016-10-03T09:18:40.225064
+CREATE TABLE Pro(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name CHAR(512),
+    Email CHAR(512),
+    Password CHAR(512),
+    Phone_No CHAR(512),
+    Volume_of_tank_in_cc DOUBLE,
+    Height_of_tank_in_cm DOUBLE,
+    Address TEXT
+);
+success!
